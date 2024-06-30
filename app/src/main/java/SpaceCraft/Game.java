@@ -68,7 +68,7 @@ public class Game extends JFrame {
         //init frame
         this.setTitle("SpaceCraft");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setIconImage(new ImageIcon(this.getClass().getResource("/SpaceCraft/src/logo.png")).getImage());
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/logo.png")).getImage());
         if (arg.length() == 0) {
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);
             this.setUndecorated(true);

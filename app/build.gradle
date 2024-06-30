@@ -17,10 +17,12 @@ repositories {
 
 dependencies {
     // Use JUnit test framework.
-    testImplementation libs.junit
+    // testImplementation libs.junit
 
     // This dependency is used by the application.
     implementation libs.guava
+
+    implementation 'javazoom:jlayer:1.0.1'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -33,4 +35,10 @@ java {
 application {
     // Define the main class for the application.
     mainClass = 'org.example.App'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'utb.fai.NetworkAppTestingTool'
+    }
 }

@@ -73,6 +73,8 @@ public class AI implements Serializable {
                         case SHOTGUN:
                             gl = this.s.gunLoading[5];
                             break;
+                        default:
+                            break;
                     }
                     if (gl <= 0) {
                         if (shootTest(p1, player, b)) {

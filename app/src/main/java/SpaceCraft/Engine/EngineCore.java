@@ -68,8 +68,8 @@ public class EngineCore extends Canvas {
 
     private Collisions collisions;
 
-    private final ImageIcon img = new ImageIcon(this.getClass().getResource("/SpaceCraft/src/bg.png"));
-    private final ImageIcon logo = new ImageIcon(this.getClass().getResource("/SpaceCraft/src/logo_1.png"));
+    private final ImageIcon img = new ImageIcon(this.getClass().getResource("/bg.png"));
+    private final ImageIcon logo = new ImageIcon(this.getClass().getResource("/logo_1.png"));
 
     private HashMap<String, SoundPlayer> sounds;
     private List<String> music_list;
@@ -133,14 +133,14 @@ public class EngineCore extends Canvas {
         this.modelEditor.init();
         //init basic sounds
         this.sounds = new HashMap<>();
-        this.sounds.put("shoot", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/shoot.mp3"), 7, false, this.FX_volume));
-        this.sounds.put("shoot_s", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/shoot_sniper.mp3"), 4, false, this.FX_volume));
-        this.sounds.put("shoot_p", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/shoot_plasma.mp3"), 5, false, this.FX_volume));
-        this.sounds.put("shoot_sh", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/shoot_shotgun.mp3"), 5, false, this.FX_volume));
-        this.sounds.put("hit", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/hit.mp3"), 10, false, this.FX_volume));
-        this.sounds.put("explode", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/explode.mp3"), 4, false, this.FX_volume));
-        this.sounds.put("click", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/click.mp3"), 2, false, this.FX_volume));
-        this.sounds.put("music1", new SoundPlayer(this.getClass().getResource("/SpaceCraft/src/music1.mp3"), 1, true, this.MUSIC_volume));
+        this.sounds.put("shoot", new SoundPlayer(this.getClass().getResource("/shoot.mp3"), 7, false, this.FX_volume));
+        this.sounds.put("shoot_s", new SoundPlayer(this.getClass().getResource("/shoot_sniper.mp3"), 4, false, this.FX_volume));
+        this.sounds.put("shoot_p", new SoundPlayer(this.getClass().getResource("/shoot_plasma.mp3"), 5, false, this.FX_volume));
+        this.sounds.put("shoot_sh", new SoundPlayer(this.getClass().getResource("/shoot_shotgun.mp3"), 5, false, this.FX_volume));
+        this.sounds.put("hit", new SoundPlayer(this.getClass().getResource("/hit.mp3"), 10, false, this.FX_volume));
+        this.sounds.put("explode", new SoundPlayer(this.getClass().getResource("/explode.mp3"), 4, false, this.FX_volume));
+        this.sounds.put("click", new SoundPlayer(this.getClass().getResource("/click.mp3"), 2, false, this.FX_volume));
+        this.sounds.put("music1", new SoundPlayer(this.getClass().getResource("/music1.mp3"), 1, true, this.MUSIC_volume));
         //rendering
         this.render = new Thread(new Runnable() {
             @Override

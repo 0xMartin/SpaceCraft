@@ -30,7 +30,7 @@ public class MenuBuilder {
         try {
             this.ttf = Font.createFont(
                     Font.TRUETYPE_FONT,
-                    this.getClass().getResourceAsStream("/SpaceCraft/src/font.ttf")
+                    this.getClass().getResourceAsStream("/font.ttf")
             );
         } catch (FontFormatException | IOException ex) {
             Logger.getLogger(MenuBuilder.class.getName()).log(Level.SEVERE, null, ex);
