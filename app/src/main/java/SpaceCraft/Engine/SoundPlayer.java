@@ -20,8 +20,6 @@ import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import org.yaml.snakeyaml.Yaml;
-
 /**
  *
  * @author Krcma
@@ -32,8 +30,6 @@ public class SoundPlayer {
     private boolean run = false;
 
     public SoundPlayer(URL sound, int size, boolean looping, float vol) {
-        Yaml yaml = new Yaml();
-
         this.clip = new Clip[size];
         size = looping ? 1 : size;
         try {

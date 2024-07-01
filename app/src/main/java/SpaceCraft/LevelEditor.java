@@ -374,7 +374,7 @@ public class LevelEditor extends javax.swing.JFrame {
         this.info.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.info.setResizable(false);
         this.info.setSize(305, 380);
-        this.info.add(new JLabel(new ImageIcon(this.getClass().getResource("/SpaceCraft/src/info.png"))));
+        this.info.add(new JLabel(new ImageIcon(this.getClass().getResource("/info.png"))));
         this.info.setTitle("INFO");
         this.info.setType(Type.UTILITY);
     }

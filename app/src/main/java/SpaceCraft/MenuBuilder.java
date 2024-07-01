@@ -361,7 +361,7 @@ public class MenuBuilder {
         l.ID = 17;
         m.addComponent(l);
         l = new Label(
-                size.width - 30 - (int) (Game.engine.getHeight() * 0.5f * 1f / Game.YSCALE),
+                size.width - 21 - (int) (Game.engine.getHeight() * 0.5f * 1f / Game.YSCALE),
                 130,
                 "",
                 new Color(130, 110, 110),
@@ -432,7 +432,7 @@ public class MenuBuilder {
         m.addComponent(b);
         //###################################################
         l = new Label(
-                (int) (size.width / 2 - size.height * 0.5f - 30),
+                (int) (size.width / 2 - size.height * 0.5f - 21),
                 65 + (int) (size.height * 0.05f),
                 "",
                 new Color(110, 110, 150),

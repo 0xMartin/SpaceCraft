@@ -2,7 +2,10 @@
   <img src="./doc/img1.png">
 </div>
 
-**Last game version from 2017**
+2560 x 1440
+1920 x 1080
+
+**Last game version from 2018**
 
 Simple game inspired by robocraft. The game has several levels, during which the player receives money to buy building blocks from which to build his spaceship.
 

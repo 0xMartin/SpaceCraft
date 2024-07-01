@@ -133,14 +133,14 @@ public class EngineCore extends Canvas {
         this.modelEditor.init();
         //init basic sounds
         this.sounds = new HashMap<>();
-        this.sounds.put("shoot", new SoundPlayer(this.getClass().getResource("/shoot.mp3"), 7, false, this.FX_volume));
-        this.sounds.put("shoot_s", new SoundPlayer(this.getClass().getResource("/shoot_sniper.mp3"), 4, false, this.FX_volume));
-        this.sounds.put("shoot_p", new SoundPlayer(this.getClass().getResource("/shoot_plasma.mp3"), 5, false, this.FX_volume));
-        this.sounds.put("shoot_sh", new SoundPlayer(this.getClass().getResource("/shoot_shotgun.mp3"), 5, false, this.FX_volume));
-        this.sounds.put("hit", new SoundPlayer(this.getClass().getResource("/hit.mp3"), 10, false, this.FX_volume));
-        this.sounds.put("explode", new SoundPlayer(this.getClass().getResource("/explode.mp3"), 4, false, this.FX_volume));
-        this.sounds.put("click", new SoundPlayer(this.getClass().getResource("/click.mp3"), 2, false, this.FX_volume));
-        this.sounds.put("music1", new SoundPlayer(this.getClass().getResource("/music1.mp3"), 1, true, this.MUSIC_volume));
+        this.sounds.put("shoot", new SoundPlayer(this.getClass().getResource("/shoot.wav"), 7, false, this.FX_volume));
+        this.sounds.put("shoot_s", new SoundPlayer(this.getClass().getResource("/shoot_sniper.wav"), 4, false, this.FX_volume));
+        this.sounds.put("shoot_p", new SoundPlayer(this.getClass().getResource("/shoot_plasma.wav"), 5, false, this.FX_volume));
+        this.sounds.put("shoot_sh", new SoundPlayer(this.getClass().getResource("/shoot_shotgun.wav"), 5, false, this.FX_volume));
+        this.sounds.put("hit", new SoundPlayer(this.getClass().getResource("/hit.wav"), 10, false, this.FX_volume));
+        this.sounds.put("explode", new SoundPlayer(this.getClass().getResource("/explode.wav"), 4, false, this.FX_volume));
+        this.sounds.put("click", new SoundPlayer(this.getClass().getResource("/click.wav"), 2, false, this.FX_volume));
+        this.sounds.put("music1", new SoundPlayer(this.getClass().getResource("/music1.wav"), 1, true, this.MUSIC_volume));
         //rendering
         this.render = new Thread(new Runnable() {
             @Override
@@ -389,7 +389,7 @@ public class EngineCore extends Canvas {
         g2.drawRoundRect(5, this.getHeight() - 80, 200, 75, 10, 10);
         g2.setFont(new Font("Tahoma", Font.BOLD, 18));
         g2.setColor(new Color(80, 80, 100));
-        g2.drawString("Damege: " + Game.gameManager.getSave().getBattleStats().damage, 15, this.getHeight() - 55);
+        g2.drawString("Damage: " + Game.gameManager.getSave().getBattleStats().damage, 15, this.getHeight() - 55);
         g2.drawString("Coins: " + Game.gameManager.getSave().getBattleStats().coins, 15, this.getHeight() - 35);
         g2.drawString("Kills: " + Game.gameManager.getSave().getBattleStats().kills, 15, this.getHeight() - 15);
         g2.setColor(Color.RED);

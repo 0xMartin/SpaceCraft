@@ -43,7 +43,7 @@ public class ModelViewer extends javax.swing.JFrame {
      */
     public ModelViewer() {
         initComponents();
-        this.setIconImage(new ImageIcon(this.getClass().getResource("/SpaceCraft/src/Viewer.png")).getImage());
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/Viewer.png")).getImage());
         this.files = new ArrayList<>();
         this.canvas1.createBufferStrategy(3);
         Thread t = new Thread(new Runnable() {

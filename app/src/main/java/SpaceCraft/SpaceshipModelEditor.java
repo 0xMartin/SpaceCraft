@@ -67,7 +67,7 @@ public class SpaceshipModelEditor extends javax.swing.JFrame {
     public SpaceshipModelEditor(int blocks_per_line) {
         this.blocks_per_line = blocks_per_line;
         initComponents();
-        this.setIconImage(new ImageIcon(this.getClass().getResource("/SpaceCraft/src/Editor.png")).getImage());
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/Editor.png")).getImage());
 
         //resize
         int x = this.getWidth() - this.canvas1.getWidth();

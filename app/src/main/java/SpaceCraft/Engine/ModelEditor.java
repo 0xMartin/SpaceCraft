@@ -285,7 +285,7 @@ public class ModelEditor {
         try {
             f = Font.createFont(
                     Font.TRUETYPE_FONT,
-                    this.getClass().getResourceAsStream("/SpaceCraft/src/font.ttf")
+                    this.getClass().getResourceAsStream("/font.ttf")
             );
             f = f.deriveFont(40F);
             Label l = new Label(30 + (int) ((size.width - 60) * 0.45f), (int) (size.height * 0.1f), "spaceship editor", new Color(110, 170, 110), f, 0.9f);
@@ -626,7 +626,7 @@ public class ModelEditor {
                 new Dimension((int) (size.width * 0.6f), (int) (size.height * 0.8f)),
                 new Color(40, 55, 40),
                 new Color(110, 140, 110),
-                new Font("Tahoma", Font.BOLD, 25),
+                new Font("Tahoma", Font.BOLD, 21),
                 0.85f,
                 new String[]{
                     "Instructions",
