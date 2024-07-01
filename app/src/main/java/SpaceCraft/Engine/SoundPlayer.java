@@ -20,6 +20,8 @@ import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+import org.yaml.snakeyaml.Yaml;
+
 /**
  *
  * @author Krcma
@@ -30,6 +32,8 @@ public class SoundPlayer {
     private boolean run = false;
 
     public SoundPlayer(URL sound, int size, boolean looping, float vol) {
+        Yaml yaml = new Yaml();
+
         this.clip = new Clip[size];
         size = looping ? 1 : size;
         try {
@@ -43,13 +47,13 @@ public class SoundPlayer {
                         baseFormat.getChannels(),
                         baseFormat.getChannels() * 2,
                         baseFormat.getSampleRate(),
-                        false
-                );
+                        false);
                 AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
                 this.clip[i] = AudioSystem.getClip();
                 this.clip[i].open(dais);
                 FloatControl volume = (FloatControl) this.clip[i].getControl(FloatControl.Type.MASTER_GAIN);
-                float gain = (float) ((volume.getMaximum() - volume.getMinimum()) * Math.log10(vol * 9f + 1f) + volume.getMinimum());
+                float gain = (float) ((volume.getMaximum() - volume.getMinimum()) * Math.log10(vol * 9f + 1f)
+                        + volume.getMinimum());
                 gain = Math.min(Math.max(gain, volume.getMinimum()), volume.getMaximum());
                 volume.setValue(gain);
                 if (looping) {
@@ -75,13 +79,17 @@ public class SoundPlayer {
             return;
         }
         this.run = true;
-        for (Clip c : this.clip) {
-            if (!c.isRunning()) {
+        try {
+            for (Clip c : this.clip) {
+                if (!c.isRunning()) {
 
-                c.setFramePosition(0);
-                c.start();
-                break;
+                    c.setFramePosition(0);
+                    c.start();
+                    break;
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -116,9 +124,11 @@ public class SoundPlayer {
         for (Clip c : this.clip) {
             FloatControl volume = (FloatControl) c.getControl(FloatControl.Type.MASTER_GAIN);
             // (Vol_max - Vol_min)*Log( x*9+1 ) - Vol_min ; x (0.0f <-> 1.0f)
-            float gain = (float) ((volume.getMaximum() - volume.getMinimum()) * Math.log10(vol * 9f + 1f) + volume.getMinimum());
+            float gain = (float) ((volume.getMaximum() - volume.getMinimum()) * Math.log10(vol * 9f + 1f)
+                    + volume.getMinimum());
             gain = Math.min(Math.max(gain, volume.getMinimum()), volume.getMaximum());
-            //System.out.println("Max vol:" + volume.getMaximum() + " Min vol:" + volume.getMinimum() + " Gain: " + gain + " Vol:" + volume.getValue());
+            // System.out.println("Max vol:" + volume.getMaximum() + " Min vol:" +
+            // volume.getMinimum() + " Gain: " + gain + " Vol:" + volume.getValue());
             volume.setValue(gain);
         }
     }

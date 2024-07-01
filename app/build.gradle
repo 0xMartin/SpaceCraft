@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 repositories {
@@ -17,12 +18,13 @@ repositories {
 
 dependencies {
     // Use JUnit test framework.
-    // testImplementation libs.junit
+    //testImplementation libs.junit
 
     // This dependency is used by the application.
     implementation libs.guava
 
-    implementation 'javazoom:jlayer:1.0.1'
+    //implementation 'javazoom:jlayer:1.0.1'
+    implementation 'org.yaml:snakeyaml:1.29'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,11 +36,11 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'org.example.App'
+    mainClass = 'SpaceCraft.Game'
 }
 
 jar {
     manifest {
-        attributes 'Main-Class': 'utb.fai.NetworkAppTestingTool'
+        attributes 'Main-Class': 'SpaceCraft.Game'
     }
 }
